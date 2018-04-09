@@ -1,0 +1,75 @@
+conky.config = {
+	background = true,
+	use_xft = true,
+	font = 'IBMPlexMono:size=10',
+	xftalpha = 0.8,
+	out_to_console = false,
+	update_interval = 1,
+    update_interval_on_battery = 5,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 150,
+    own_window_colour = '151515',
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	stippled_borders = 5,
+	default_color = 'grey',
+	default_shade_color = 'black',
+	default_outline_color = 'black',
+	alignment = 'middle_right',
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	override_utf8_locale = true,
+	use_spacer = 'none',
+	gap_y = -25,
+    minimum_height = 768,
+    minimum_width = 200,
+    maximum_width = 200,
+};
+
+conky.text = [[
+
+
+
+
+
+
+
+${color}$stippled_hr
+${color #FD971F}$alignc$sysname $kernel
+${color #A6E22E}$alignc${exec whoami} @ ${color #66D9EF}$nodename
+${color}$stippled_hr
+${color}Date: ${alignr}${color white}${time %Y-%m-%d}
+${color}Time: ${alignr}${color white}${time %k:%M:%S}
+${color}Uptime: ${alignr}${color white}$uptime
+$color$stippled_hr
+${color #FD971F}${alignc}System
+${color}Battery: ${alignr}${color white}${battery_percent BAT0}% | ${color}AC: ${color white}${acpiacadapter}
+${battery_bar}
+${color}CPU: ${alignr}${color white}${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input | cut -c-2 }°C | ${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input | cut -c-2 }°C | ${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp3_input | cut -c-2 }°C
+$color$stippled_hr
+${color #FD971F}${alignc}Performance
+${color}CPU:${color white} ${alignr}${cpu cpu1}% | ${cpu cpu2}% | ${cpu cpu3}% | ${cpu cpu4}% 
+${cpubar cpu0}
+${color}RAM:${color white} ${alignc}$memperc%  ${alignr}$mem/$memmax
+$membar
+${color}/dev/sda1${color white}   ${alignc}${fs_used_perc}% ${alignr}${hddtemp}°C
+${fs_bar /}
+$color$stippled_hr
+${color #FD971F}${alignc}Network
+${if_existing /sys/class/net/wlp3s0/operstate up}${color}Local IP: ${alignr}${color white}${addrs wlp3s0}
+${color}Public IP: ${alignr}${color white}${execi 3600 wget -O - -q ipv4.icanhazip.com}
+${color}Net Down: ${alignr}${color white}${downspeed wlp3s0}
+${color}${downspeedgraph 25 wlp3s0 -l ffffff ffffff}
+${color}Net Up: ${alignr}${color white}${upspeed wlp3s0}
+${color}${upspeedgraph 25 wlp3s0 -l ffffff ffffff} ${endif}
+$color$stippled_hr
+]];

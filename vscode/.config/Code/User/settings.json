@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Monokai Pro",
+
+    "markdown.preview.fontFamily": "'IBMPlexSans', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+
+    "markdownlint.config": {
+        "MD007": false
+    }
+}
