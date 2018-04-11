@@ -64,12 +64,12 @@ $membar
 ${color}/dev/sda1${color white}   ${alignc}${fs_used_perc}% ${alignr}${hddtemp}°C
 ${fs_bar /}
 $color$stippled_hr
-${if_existing /sys/class/net/wlp3s0/operstate up}${color #FD971F}${alignc}Network
-${color}Local IP: ${alignr}${color white}${addrs wlp3s0}
+${color #FD971F}${alignc}Network
+${if_existing /sys/class/net/wlp3s0/operstate up}${color}Local IP: ${alignr}${color white}${addrs wlp3s0}
 ${color}Public IP: ${alignr}${color white}${execi 3600 wget -O - -q ipv4.icanhazip.com}
 ${color}Net Down: ${alignr}${color white}${downspeed wlp3s0}
-${color}${downspeedgraph 25 wlp3s0 ffffff ffffff}
+${color}${downspeedgraph 25 wlp3s0 -l ffffff ffffff}
 ${color}Net Up: ${alignr}${color white}${upspeed wlp3s0}
-${color}${upspeedgraph 25 wlp3s0 ffffff ffffff} ${endif}
+${color}${upspeedgraph 25 wlp3s0 -l ffffff ffffff} ${endif}
 $color$stippled_hr
 ]];
