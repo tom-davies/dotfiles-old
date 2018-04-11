@@ -1,0 +1,4 @@
+[Info  - 23:01:22] Using tsserver from: /opt/visual-studio-code/resources/app/extensions/node_modules/typescript/lib
+[Info  - 23:01:22] Forking TSServer
+PATH: /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+[Info  - 23:01:22] Started TSServer
