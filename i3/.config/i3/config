@@ -76,9 +76,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+l layout stacking
-bindsym $mod+u layout tabbed
-bindsym $mod+y layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -174,7 +174,7 @@ bar {
 }
 
 #Lock screen
-bindsym $mod+shift+l exec i3lock -c 000000
+bindsym $mod+shift+z exec i3lock -c 000000
 
 #Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
@@ -186,4 +186,4 @@ gaps inner 10
 gaps outer 5
 
 ##VIRTUALBOX ONLY, COMMENT OUT ON OTHER DEVICES
-exec VBoxClient-all
+#exec VBoxClient-all
