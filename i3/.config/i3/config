@@ -43,10 +43,10 @@ bindsym $mod+r exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+n focus left
-bindsym $mod+e focus down
-bindsym $mod+i focus up
-bindsym $mod+o focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -55,10 +55,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+n move left
-bindsym $mod+Shift+e move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -76,9 +76,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+l layout stacking
-bindsym $mod+u layout tabbed
-bindsym $mod+y layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -174,7 +174,7 @@ bar {
 }
 
 #Lock screen
-bindsym $mod+shift+l exec i3lock -c 000000
+bindsym $mod+shift+z exec i3lock -c 000000
 
 #Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
@@ -186,4 +186,4 @@ gaps inner 10
 gaps outer 5
 
 ##VIRTUALBOX ONLY, COMMENT OUT ON OTHER DEVICES
-exec VBoxClient-all
+#exec VBoxClient-all
