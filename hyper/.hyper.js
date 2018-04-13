@@ -134,7 +134,7 @@ module.exports = {
   plugins: [
     'hyperterm-monokai',
     'hyperterm-lastpass',
-    'hyper-arc-dark-controls',
+    'hyper-native-window-decoration',
   ],
 
   // in development, you can create a directory under
