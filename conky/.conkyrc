@@ -5,14 +5,15 @@ conky.config = {
 	xftalpha = 0.8,
 	out_to_console = false,
 	update_interval = 1,
-    update_interval_on_battery = 5,
+        update_interval_on_battery = 5,
 	total_run_times = 0,
 	own_window = true,
-	own_window_type = 'desktop',
+        own_window_class = Conky,
+	own_window_type = 'override',
 	own_window_transparent = false,
-    own_window_argb_visual = true,
-    own_window_argb_value = 150,
-    own_window_colour = '151515',
+        own_window_argb_visual = true,
+        own_window_argb_value = 150,
+        own_window_colour = '151515',
 	double_buffer = true,
 	draw_shades = false,
 	draw_outline = false,
@@ -29,16 +30,13 @@ conky.config = {
 	net_avg_samples = 2,
 	override_utf8_locale = true,
 	use_spacer = 'none',
-	gap_y = -25,
+	gap_y = 0,
     minimum_height = 768,
     minimum_width = 200,
     maximum_width = 200,
 };
 
 conky.text = [[
-
-
-
 
 
 
