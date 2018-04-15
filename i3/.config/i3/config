@@ -13,11 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:IBM Plex Mono 8
+font pango:Input Sans 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:IBM Sans 8
+#font pango:Hack 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -177,17 +177,25 @@ bindsym $mod+shift+z exec i3lock -fe
 
 #Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
-
+exec_always wal -i ~/Pictures/wallpaper.jpg
+ 
 #Disregard Borders; Obtain Gaps
 for_window [class="^.*"] border pixel 0
 smart_gaps on
 gaps inner 10
 gaps outer 5
 
+#Compositing, ACTIVATE
+exec_always compton
+
 ##VIRTUALBOX ONLY, COMMENT OUT ON OTHER DEVICES
-exec VBoxClient-all
+#exec VBoxClient-all
 
 ##THINKPAD ONLY, COMMENT OUT ON OTHER DEVICES
 #Screen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10  #increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 10  #decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10 && pkill dunst && notify-send -u low 'Brightness Inc' $(cat /sys/class/backlight/intel_backlight/brightness)"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10 && pkill dunst && notify-send -u low 'Brightness Dec' $(cat /sys/class/backlight/intel_backlight/brightness)" 
+#Volume controls
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute       exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle

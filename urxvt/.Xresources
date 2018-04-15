@@ -35,7 +35,7 @@
 *.color7:       #f8f8f2
 *.color15:      #f9f8f5
 
-URxvt.font: xft:IBMPlexMono:size=10
+URxvt.font: xft:Input Mono:size=10
 URxvt.scrollBar: false
 
 URxvt.depth:32
