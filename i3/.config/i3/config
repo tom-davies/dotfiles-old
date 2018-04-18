@@ -94,8 +94,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 ""
-set $ws2 ""
+set $ws1 "1 "
+set $ws2 "2 "
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -186,19 +186,19 @@ gaps inner 10
 gaps outer 5
 
 #Compositing, ACTIVATE
-exec_always compton
+#exec_always compton
 
 #Eliminate Blue light
-exec_always --no-startup-id "redshift"
+#exec_always --no-startup-id "redshift"
 
 ##VIRTUALBOX ONLY, COMMENT OUT ON OTHER DEVICES
-#exec VBoxClient-all
+exec VBoxClient-all
 
 ##THINKPAD ONLY, COMMENT OUT ON OTHER DEVICES
 #Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10 && pkill dunst && notify-send -u low 'Brightness Inc' $(cat /sys/class/backlight/intel_backlight/brightness)"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10 && pkill dunst && notify-send -u low 'Brightness Dec' $(cat /sys/class/backlight/intel_backlight/brightness)" 
+#bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10 && pkill dunst && notify-send -u low 'Brightness Inc' $(cat /sys/class/backlight/intel_backlight/brightness)"
+#bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10 && pkill dunst && notify-send -u low 'Brightness Dec' $(cat /sys/class/backlight/intel_backlight/brightness)" 
 #Volume controls
-bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute       exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+#bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+#bindsym XF86AudioMute       exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
