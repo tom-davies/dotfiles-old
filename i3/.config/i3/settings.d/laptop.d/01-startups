@@ -1,0 +1,6 @@
+#Compositing, ACTIVATE
+exec_always compton
+
+#Eliminate Blue light
+exec_always --no-startup-id "redshift"
+

@@ -1,0 +1,7 @@
+#############################
+# Window Properties Setting #
+#############################
+#Assign software to workspaces
+assign [class = "Nightly"] $ws2
+assign [class="Spotify"] $ws8
+
