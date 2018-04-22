@@ -8,9 +8,9 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #8888
-background-alt = #444
+background = ${xrdb:color0:#222}
+;background = #888
+background-alt = ${xrdb:color1}
 foreground = ${xrdb:color7:#222}
 ;foreground = #dfdfdf
 foreground-alt = #555
@@ -53,7 +53,7 @@ modules-right = cpu memory eth powermenu
 
 tray-position = right
 tray-padding = 2
-tray-transparent = false
+tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -129,7 +129,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = #0000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
