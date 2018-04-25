@@ -5,5 +5,5 @@
 exec_always wal -i ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id ~/.scripts/blurme -t 0 &
 #exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
-
+exec_always --no-startup-id oomoxify-cli ~/.cache/wal/colors-oomox
 exec_always --no-startup-id polybar example
