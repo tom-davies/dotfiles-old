@@ -47,9 +47,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = "FontAwesome5Free:fontformat=truetype:size=8:antialias=false;1"
 
-modules-left = i3
+modules-left = i3 mpd
 modules-center = date
-modules-right = cpu memory eth powermenu
+modules-right = xbacklight temperature cpu memory wlan eth battery
 
 tray-position = right
 tray-padding = 2
@@ -191,7 +191,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-;format-prefix = " "
+format-prefix = "cpu:"
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 label = %percentage:2%%
@@ -199,7 +199,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-;format-prefix = " "
+format-prefix = "mem:"
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 label = %percentage_used%%
@@ -209,9 +209,9 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = wlan:<label-connected>
+;format-connected-underline = #9f78e1
+label-connected = %essid% %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -232,7 +232,7 @@ interface = enp0s3
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-;format-connected-prefix = " "
+format-connected-prefix = "eth:"
 ;format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -292,13 +292,13 @@ battery = BAT0
 adapter = AC
 full-at = 67
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging = bat^:<label-charging>
+;format-charging-underline = #ffb52a
 
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = batv:<label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "bat:"
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -318,9 +318,9 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format = temp:<label>
+;format-underline = #f50a4d
+format-warn = TEMP:<label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature%
