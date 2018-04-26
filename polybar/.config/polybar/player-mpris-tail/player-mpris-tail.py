@@ -10,7 +10,7 @@ from gi.repository import Playerctl, GLib
 
 MUSIC_ICON = ''
 PAUSE_ICON = ''
-PLAYER_CLOSED_ICON = '#3'
+PLAYER_CLOSED_ICON = ''
 
 def listPlayers():
     return [
